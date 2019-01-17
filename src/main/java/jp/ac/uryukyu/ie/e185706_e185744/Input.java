@@ -5,18 +5,28 @@ import java.util.Scanner;
 
 public class Input {
     private String str;
-    private String regex;
+    private Pattern regex;
 
+    Input(String str){
+        Pattern p = Pattern.compile(str);
+        this.regex = p;
+        this.str = input_str();
+    }
     /**
      * 入力部分
      * @return　入力結果を返却する。
      */
-    private String input_str(){
+    String input_str(){
         String input;
         Scanner in = new Scanner(System.in);
         System.out.println("入力してください");
         input = in.nextLine();
         return input;
+    }
+
+
+    public String getStr() {
+        return str;
     }
 
     /**
@@ -25,7 +35,7 @@ public class Input {
      * @param input　入力したもの
      * @return Matcher.find()の結果を返却する。
      */
-    private boolean findMatches(Pattern pattern, CharSequence input) {
+    boolean findMatches(Pattern pattern, CharSequence input) {
         final Matcher m = pattern.matcher(input);
         return m.find();
     }
@@ -34,11 +44,9 @@ public class Input {
      * このクラスの実行部分
      */
     void input_main(){
-        Pattern p = Pattern.compile("^[0-9]*$");
-        String input = input_str();
         while (true){
-            if(!findMatches(p, input)){
-                input = input_str();
+            if(!findMatches(this.regex, this.str)){
+                this.str = input_str();
             }else break;
         }
     }
