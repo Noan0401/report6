@@ -32,6 +32,8 @@ public class Branch {
                 subscription.New();
                 break;
             }else if(num == 2){
+                Date_Customer date_customer = new Date_Customer();
+                date_customer.main();
                 break;
             }else {
                 num = input();

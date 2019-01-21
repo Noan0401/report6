@@ -41,7 +41,7 @@ public class Subscription {
         System.out.println("ご利用有難うございました。");
     }
 
-    public ArrayList<String> getList() {
+    ArrayList<String> getList() {
         return list;
     }
 }
