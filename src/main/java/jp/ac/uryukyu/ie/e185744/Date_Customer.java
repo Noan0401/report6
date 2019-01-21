@@ -12,7 +12,7 @@ public class Date_Customer {
     ArrayList createList(){
         ArrayList list = new ArrayList();;
         list.add("でんばんかえたい");
-        list.add("09012123434");
+        list.add("08012123434");
         list.add("pass1234");
         return list;
     }
