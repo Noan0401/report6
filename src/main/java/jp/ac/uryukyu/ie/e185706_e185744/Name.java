@@ -8,7 +8,6 @@ public class Name extends Input {
     Name(){
         super("^[ぁ-んー]*$");
     }
-
     @Override
     String input_str(){
         String input;
@@ -17,5 +16,4 @@ public class Name extends Input {
         input = in.nextLine();
         return input;
     }
-
 }

@@ -1,19 +1,39 @@
 package jp.ac.uryukyu.ie.e185706_e185744;
-import java.util.Scanner;
+import java.util.ArrayList;
 
 
 public class Subscription {
 
     private String name;
-    private String mail_address;
-    private int phone_number;
+    private String phone_number;
     private String pass;
 
-    Subscription(String name,String m_address,int p_number,String pass){
-        this.name = name;
-        this.mail_address = m_address;
-        this.phone_number = p_number;
-        this.pass = pass;
+    void New(){
+        Name name = new Name();
+        name.input_main();
+        this.name = name.getStr();
+
+        Phone_Number phone_number = new Phone_Number();
+        phone_number.input_main();
+        this.phone_number = phone_number.getStr();
+
+        Passward passward = new Passward();
+        passward.input_str();
+        this.pass = passward.getStr();
+
+        createList();
     }
 
+    ArrayList list = new ArrayList();
+    private void createList() {
+        list.add(this.name);
+        list.add(this.phone_number);
+        list.add(this.pass);
+
+        System.out.println(list.get(0));
+    }
+
+    public ArrayList<String> getList() {
+        return list;
+    }
 }

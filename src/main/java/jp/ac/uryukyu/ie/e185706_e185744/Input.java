@@ -24,7 +24,6 @@ public class Input {
         return input;
     }
 
-
     public String getStr() {
         return str;
     }
