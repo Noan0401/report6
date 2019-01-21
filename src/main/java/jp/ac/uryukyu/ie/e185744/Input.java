@@ -4,14 +4,19 @@ import java.util.regex.Pattern;
 import java.util.Scanner;
 
 public class Input {
+
     private String str;
     private Pattern regex;
 
+    /**
+     * コンストラクタ
+     * @param str 正規表現
+     */
     Input(String str){
         Pattern p = Pattern.compile(str);
         this.regex = p;
-        this.str = input_str();
     }
+
     /**
      * 入力部分
      * @return　入力結果を返却する。
@@ -43,6 +48,7 @@ public class Input {
      * このクラスの実行部分
      */
     void input_main(){
+        this.str = input_str();
         while (true){
             if(!findMatches(this.regex, this.str)){
                 this.str = input_str();

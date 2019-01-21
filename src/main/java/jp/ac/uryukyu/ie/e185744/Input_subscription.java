@@ -4,6 +4,8 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 
+//このクラスは使っていません
+
 public class Input_subscription {
     private String name;
     private String mail_address;
