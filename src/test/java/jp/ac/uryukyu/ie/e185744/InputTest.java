@@ -16,7 +16,11 @@ class InputTest {
         String str = "^[0-9]+$";
         Pattern p = Pattern.compile(str);
         Input input = new Input(str);
-        input.findMatches(p,"000");
+        boolean torf = input.findMatches(p,"000");
+        while (true){
+            if(torf == true) break;
+        }
+
     }
 
 }
